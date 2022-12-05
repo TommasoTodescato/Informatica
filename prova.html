@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pagina</title>
+	</head>
+
+	<body>
+		<h1 id="ris"></h1>
+	
+	<script>
+		let cognome = "Todescato";
+		let res = "";
+		function IsVowel(letter)
+		{
+			let vowels = ["a", "e", "i", "o", "u"];
+			return (vowels.includes(letter));
+		}
+
+		function GetOnlyCons(name)
+		{
+			let res = "";
+			for(i of name.split(""))
+			{
+				if(!IsVowel(i))
+				{
+					res = res + i;	
+				}
+			}
+			return res;
+		}
+		cognome = GetOnlyCons(cognome);
+		if(cognome.length>3)
+		{
+			cognome = cognome.slice(0,-2);
+		}
+		document.getElementById("ris").innerHTML = cognome;
+	</script>
+	
+	</body>
+</html>
