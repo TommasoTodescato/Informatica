@@ -8,9 +8,6 @@
 		<h1 id="ris"></h1>
 	
 		<script>
-			let cognome = "Todescato";
-			let res = "";
-			
 			function IsVowel(letter)
 			{
 				let vowels = ["A", "E", "I", "O", "U"];
@@ -29,16 +26,19 @@
 				}
 				return ret.toUpperCase();
 			}
+			
+			let cognome = prompt("Inserisci il tuo cognome:");
+			let res = cognome.toUpperCase();
 
-			res = cognome.toUpperCase()
 			if(cognome.length<3)
-			{
 				res = res + "X";
-			}
+			else if(cognome.length===3)
+				res = cognome;
 			else
 			{
 				res = GetOnlyCons(cognome);
-				res = res.slice(0,-(res.length-3));
+				if(res.length>3)
+					res = res.slice(0,-(res.length-3));
 				while(res.length<3)
 				{
 					for(i of cognome.split(""))
@@ -51,7 +51,7 @@
 					}
 				}
 			}
-			document.getElementById("ris").innerHTML = res;
+			document.getElementById("ris").innerHTML = res.toUpperCase();
 		</script>
 	</body>
 </html>
