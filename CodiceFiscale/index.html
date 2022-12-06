@@ -7,57 +7,51 @@
 	<body>
 		<h1 id="ris"></h1>
 	
-	<script>
-		let cognome = "Todescato";
-		let res = "";
-		
-
-		
-		function IsVowel(letter)
-		{
-			let vowels = ["A", "E", "I", "O", "U"];
-			return (vowels.includes(letter.toUpperCase()));
-		}
-
-		function GetOnlyCons(name)
-		{
-			let ret = "";
-			for(i of name.split(""))
+		<script>
+			let cognome = "Todescato";
+			let res = "";
+			
+			function IsVowel(letter)
 			{
-				if(!IsVowel(i))
-				{
-					ret = ret + i;	
-				}
+				let vowels = ["A", "E", "I", "O", "U"];
+				return (vowels.includes(letter.toUpperCase()));
 			}
-			return ret.toUpperCase();
-		}
 
-
-
-		res = cognome.toUpperCase()
-		if(cognome.length<3)
-		{
-			res = res + "X";
-		}
-		else
-		{
-			res = GetOnlyCons(cognome);
-			res = res.slice(0,-(res.length-3));
-			while(res.length<3)
+			function GetOnlyCons(name)
 			{
-				for(i of cognome.split(""))
+				let ret = "";
+				for(i of name.split(""))
 				{
-					if(IsVowel(i))
+					if(!IsVowel(i))
 					{
-						res = res + i;
-						break;
+						ret = ret + i;	
+					}
+				}
+				return ret.toUpperCase();
+			}
+
+			res = cognome.toUpperCase()
+			if(cognome.length<3)
+			{
+				res = res + "X";
+			}
+			else
+			{
+				res = GetOnlyCons(cognome);
+				res = res.slice(0,-(res.length-3));
+				while(res.length<3)
+				{
+					for(i of cognome.split(""))
+					{
+						if(IsVowel(i))
+						{
+							res = res + i;
+							break;
+						}
 					}
 				}
 			}
-		}
-
-		document.getElementById("ris").innerHTML = res;
-	</script>
-	
+			document.getElementById("ris").innerHTML = res;
+		</script>
 	</body>
 </html>
