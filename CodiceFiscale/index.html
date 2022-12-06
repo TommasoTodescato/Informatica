@@ -10,30 +10,53 @@
 	<script>
 		let cognome = "Todescato";
 		let res = "";
+		
+
+		
 		function IsVowel(letter)
 		{
-			let vowels = ["a", "e", "i", "o", "u"];
-			return (vowels.includes(letter));
+			let vowels = ["A", "E", "I", "O", "U"];
+			return (vowels.includes(letter.toUpperCase()));
 		}
 
 		function GetOnlyCons(name)
 		{
-			let res = "";
+			let ret = "";
 			for(i of name.split(""))
 			{
 				if(!IsVowel(i))
 				{
-					res = res + i;	
+					ret = ret + i;	
 				}
 			}
-			return res;
+			return ret.toUpperCase();
 		}
-		cognome = GetOnlyCons(cognome);
-		if(cognome.length>3)
+
+
+
+		res = cognome.toUpperCase()
+		if(cognome.length<3)
 		{
-			cognome = cognome.slice(0,-2);
+			res = res + "X";
 		}
-		document.getElementById("ris").innerHTML = cognome;
+		else
+		{
+			res = GetOnlyCons(cognome);
+			res = res.slice(0,-(res.length-3));
+			while(res.length<3)
+			{
+				for(i of cognome.split(""))
+				{
+					if(IsVowel(i))
+					{
+						res = res + i;
+						break;
+					}
+				}
+			}
+		}
+
+		document.getElementById("ris").innerHTML = res;
 	</script>
 	
 	</body>
