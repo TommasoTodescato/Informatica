@@ -105,26 +105,21 @@ function getControlCode(incompleteCode)
 		"R":8,	"S":12,	"T":14,	"U":16,	"V":10,	"4":9,	"9":21,
 		"W":22,	"X":25,	"Y":24,	"Z":23,	"0":1,	"5":13,	"A":1,	"B":0
 	};
-	for(let i=1;i<=15;i++)
+	for(let i=0;i<15;i++)
 	{
 		if (i%2===0)
-			sum += evenTable[incompleteCode[i]];
-		else
 			sum += oddTable[incompleteCode[i]];
+		else
+			sum += evenTable[incompleteCode[i]];
 	}
+	
 	result = sum % 26;
+	
 	result = Object.keys(evenTable).find(key=>evenTable[key]===sum);
+	//result è giusto, bisogna solo capire come prendere il value dal key
 	
 	console.log(result);
 	return result;
-	// let alphabetTable =
-	// {
-	// 	'A':0,	'B':1,	'C':2,	'D':3,	'E':4,	'F':5,	'G':6,
-	// 	'H':7,	'I':8,	'J':9,	'K':10,	'L':11,	'M':12,	'N':13,
-	// 	'O':14,	'P':15,	'Q':16,	'R':17,	'S':18,	'T':19,	'U':20,
-	// 	'V':21,	'W':22,	'X':23,	'Y':24,	'Z':25
-	// }
-
 }
 
 function getCode()
