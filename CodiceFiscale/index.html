@@ -2,56 +2,33 @@
 <html>
 	<head>
 		<title>Pagina</title>
+		<script src="Code/Core.js"></script>
 	</head>
-
-	<body>
-		<h1 id="ris"></h1>
 	
+	<body>
+		<label for="surname">Cognome:</label>
+		<input type="text" id="surname" name="surname"><br>
+		
+		<label for="name">Nome:</label>
+		<input type="text" id="name" name="name"><br>
+		
+		<label for="birthplace">Luogo di nascita (codice):</label>
+		<input type="text" id="birthplace" name="birthplace"><br>
+		
+		<label for="sex">Sesso:</label>
+		<input type="radio" id="M" name="sex">
+		<input type="radio" id="F" name="sex"><br>
+		
+		<label for="birthdate">Data di nascita:</label>
+		<input type="date" id="birthdate" name="birthdate"><br>
+		
 		<script>
-			function IsVowel(letter)
-			{
-				let vowels = ["A", "E", "I", "O", "U"];
-				return (vowels.includes(letter.toUpperCase()));
-			}
-
-			function GetOnlyCons(name)
-			{
-				let ret = "";
-				for(i of name.split(""))
-				{
-					if(!IsVowel(i))
-					{
-						ret = ret + i;	
-					}
-				}
-				return ret.toUpperCase();
-			}
-			
-			let cognome = prompt("Inserisci il tuo cognome:");
-			let res = cognome.toUpperCase();
-
-			if(cognome.length<3)
-				res = res + "X";
-			else if(cognome.length===3)
-				res = cognome;
-			else
-			{
-				res = GetOnlyCons(cognome);
-				if(res.length>3)
-					res = res.slice(0,-(res.length-3));
-				while(res.length<3)
-				{
-					for(i of cognome.split(""))
-					{
-						if(IsVowel(i))
-						{
-							res = res + i;
-							break;
-						}
-					}
-				}
-			}
-			document.getElementById("ris").innerHTML = res.toUpperCase();
+			document.getElementById("birthdate").max = new Date().toISOString().split("T")[0];
 		</script>
+
+
+		<button onclick="console.log(getSurname('surname')+getName('name')+getDate('birthdate')+getDaySex('birthdate','F')+getPlace('birthplace'))">Submit</button>
+		
+		<h1 id="ris"></h1>
 	</body>
 </html>
