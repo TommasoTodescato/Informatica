@@ -105,6 +105,14 @@ function getControlCode(incompleteCode)
 		"R":8,	"S":12,	"T":14,	"U":16,	"V":10,	"4":9,	"9":21,
 		"W":22,	"X":25,	"Y":24,	"Z":23,	"0":1,	"5":13,	"A":1,	"B":0
 	};
+	let alphaTable =
+	{
+		0:"A",	1:"B",	2:"C",	3:"D",	4:"E",	5:"F",
+		6:"G",	7:"H",	8:"I",	9:"J",	10:"K",	11:"L",
+		12:"M",	13:"N",	14:"O",	15:"P",	16:"Q",	17:"R",
+		18:"S",	19:"T",	20:"U",	21:"V",	22:"W",	23:"X",
+		24:"Y",	25:"Z"
+	}
 	for(let i=0;i<15;i++)
 	{
 		if (i%2===0)
@@ -114,24 +122,19 @@ function getControlCode(incompleteCode)
 	}
 	
 	result = sum % 26;
+	result = alphaTable[result];
+	return result;
 	
-	result = Object.keys(evenTable).find(key=>evenTable[key]===sum);
-	//result è giusto, bisogna solo capire come prendere il value dal key
-	
+}
+
+function getCode(surnameId, nameId, placeId, femaleId, dateId)
+{
+	let result = getSurname(surnameId) + getName(nameId) +
+	getDate(dateId) + getDaySex(dateId, femaleId) + getPlace(placeId);
+	result += getControlCode(result);
 	console.log(result);
 	return result;
 }
-
-function getCode()
-{
-	//makePlace()
-	//makeControl()
-	
-
-}
-
-
-
 
 
 
