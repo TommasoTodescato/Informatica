@@ -126,6 +126,6 @@ function getCode(surnameId, nameId, placeId, femaleId, dateId)
 	let result = getSurname(surnameId) + getName(nameId) +
 	getDate(dateId) + getDaySex(dateId, femaleId) + getPlace(placeId);
 	result += getControlCode(result);
-	console.log(result);
+	document.getElementById("result").innerHTML = result;
 	return result;
 }
