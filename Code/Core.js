@@ -16,7 +16,6 @@ function getSurname(surnameId)
 {
 	let surname = result = document.getElementById(surnameId).value;
 	let i = 0;
-
 	if (surname.length < 3)
 		result += "X";
 	else if (surname.length > 3)
@@ -37,7 +36,6 @@ function getName(nameId)
 {
 	let name = result = document.getElementById(nameId).value;
 	let i = 0;
-
 	if (name.length < 3)
 		result += "X";
 	else if (name.length > 3)
@@ -74,9 +72,7 @@ function getDaySex(dateId, femaleId)
 	let date = document.getElementById(dateId).value;
 	let result = date.split("-")[2];
 	if (document.getElementById(femaleId).checked === true)
-	{
 		result = parseInt(result) + 40;
-	}
 	return String(result);
 }
 
@@ -120,11 +116,9 @@ function getControlCode(incompleteCode)
 		else
 			sum += evenTable[incompleteCode[i]];
 	}
-	
 	result = sum % 26;
 	result = alphaTable[result];
-	return result;
-	
+	return result;	
 }
 
 function getCode(surnameId, nameId, placeId, femaleId, dateId)
@@ -135,6 +129,3 @@ function getCode(surnameId, nameId, placeId, femaleId, dateId)
 	console.log(result);
 	return result;
 }
-
-
-
