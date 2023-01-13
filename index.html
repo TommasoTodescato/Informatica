@@ -6,25 +6,27 @@
 		<link href="./Style/output.css" rel="stylesheet">
 	</head>
 	
-	<body class="bg-gradient-to-r from-indigo-600 to-blue-600 items-center content-center">
+	<body class="grid place-items-center h-screen bg-gradient-to-r from-indigo-600 to-blue-700  ">
 		<h1 class="text-center font-extrabold text-3xl text-white">CALCOLO CODICE FISCALE</h1>
 
-		<div class="grid grid-cols-1 content-center items-center w-1/2">
-			<label for="surname" class="font-bold text-white text-center grow-0">Cognome</label>
-			<input type="text" id="surname" name="surname" class="border-2 rounded-md grow-0 w-96"><br>
+		<div class="grid grid-cols-1 w-1/2">
+			<label for="surname" 	class="font-bold text-white text-center">Cognome</label>
+			<input type="text" id="surname" name="surname" 		class="border-2 rounded-md"><br>
 			
-			<label for="name" class="font-bold text-white text-center">Nome</label>
-			<input type="text" id="name" name="name " class="border-2 rounded-md"><br>
+			<label for="name" 		class="font-bold text-white text-center">Nome</label>
+			<input type="text" id="name" name="name "		 	class="border-2 rounded-md"><br>
 			
 			<label for="birthplace" class="font-bold text-white text-center">Luogo di nascita (codice)</label>
 			<input type="text" id="birthplace" name="birthplace" class="border-2 rounded-md"><br>
 			
-			<label for="sex" class="font-bold text-white text-center">Sesso:</label>
-			<input type="radio" id="M" name="sex">
-			<input type="radio" id="F" name="sex"><br>
+			<label for="sex" 		class="font-bold text-white text-center">Sesso:</label>
+			<div class="grid grid-rows-1">
+				<input type="radio" id="M" name="sex" placeholder="M">
+				<input type="radio" id="F" name="sex"><br>
+			</div>
 			
-			<label for="birthdate" class="font-bold text-white text-center">Data di nascita</label>
-			<input type="date" id="birthdate" name="birthdate" class="border-2 rounded-md"><br>
+			<label for="birthdate" 	class="font-bold text-white text-center">Data di nascita</label>
+			<input type="date" id="birthdate" name="birthdate" 	class="border-2 rounded-md"><br>
 			
 			<script>
 				document.getElementById("birthdate").max = new Date().toISOString().split("T")[0];
