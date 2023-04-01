@@ -1,0 +1,15 @@
+C:\Users\tomma\OneDrive\Desktop\Files\Informatica\CS\Frazione\obj\Debug\net7.0\Frazione.csproj.AssemblyReference.cache
+C:\Users\tomma\OneDrive\Desktop\Files\Informatica\CS\Frazione\obj\Debug\net7.0\Frazione.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tomma\OneDrive\Desktop\Files\Informatica\CS\Frazione\obj\Debug\net7.0\Frazione.AssemblyInfoInputs.cache
+C:\Users\tomma\OneDrive\Desktop\Files\Informatica\CS\Frazione\obj\Debug\net7.0\Frazione.AssemblyInfo.cs
+C:\Users\tomma\OneDrive\Desktop\Files\Informatica\CS\Frazione\obj\Debug\net7.0\Frazione.csproj.CoreCompileInputs.cache
+C:\Users\tomma\OneDrive\Desktop\Files\Informatica\CS\Frazione\bin\Debug\net7.0\Frazione.exe
+C:\Users\tomma\OneDrive\Desktop\Files\Informatica\CS\Frazione\bin\Debug\net7.0\Frazione.deps.json
+C:\Users\tomma\OneDrive\Desktop\Files\Informatica\CS\Frazione\bin\Debug\net7.0\Frazione.runtimeconfig.json
+C:\Users\tomma\OneDrive\Desktop\Files\Informatica\CS\Frazione\bin\Debug\net7.0\Frazione.dll
+C:\Users\tomma\OneDrive\Desktop\Files\Informatica\CS\Frazione\bin\Debug\net7.0\Frazione.pdb
+C:\Users\tomma\OneDrive\Desktop\Files\Informatica\CS\Frazione\obj\Debug\net7.0\Frazione.dll
+C:\Users\tomma\OneDrive\Desktop\Files\Informatica\CS\Frazione\obj\Debug\net7.0\refint\Frazione.dll
+C:\Users\tomma\OneDrive\Desktop\Files\Informatica\CS\Frazione\obj\Debug\net7.0\Frazione.pdb
+C:\Users\tomma\OneDrive\Desktop\Files\Informatica\CS\Frazione\obj\Debug\net7.0\Frazione.genruntimeconfig.cache
+C:\Users\tomma\OneDrive\Desktop\Files\Informatica\CS\Frazione\obj\Debug\net7.0\ref\Frazione.dll

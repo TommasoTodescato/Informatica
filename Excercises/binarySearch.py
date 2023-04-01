@@ -13,4 +13,4 @@ def search(inizio, fine, array, elem):
 	else:
 		return search(inizio, i-1, array[:i], elem)
 	
-search(0, len(a)-1, a, 92)
+print(search(0, len(a)-1, a, 92))
