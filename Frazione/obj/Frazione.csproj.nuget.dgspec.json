@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tomma\\OneDrive\\Desktop\\Files\\Informatica\\CS\\Frazione\\Frazione.csproj": {}
+    "C:\\repos\\Informatica\\Frazione\\Frazione.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tomma\\OneDrive\\Desktop\\Files\\Informatica\\CS\\Frazione\\Frazione.csproj": {
+    "C:\\repos\\Informatica\\Frazione\\Frazione.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tomma\\OneDrive\\Desktop\\Files\\Informatica\\CS\\Frazione\\Frazione.csproj",
+        "projectUniqueName": "C:\\repos\\Informatica\\Frazione\\Frazione.csproj",
         "projectName": "Frazione",
-        "projectPath": "C:\\Users\\tomma\\OneDrive\\Desktop\\Files\\Informatica\\CS\\Frazione\\Frazione.csproj",
+        "projectPath": "C:\\repos\\Informatica\\Frazione\\Frazione.csproj",
         "packagesPath": "C:\\Users\\tomma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tomma\\OneDrive\\Desktop\\Files\\Informatica\\CS\\Frazione\\obj\\",
+        "outputPath": "C:\\repos\\Informatica\\Frazione\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tomma\\AppData\\Roaming\\NuGet\\NuGet.Config"
