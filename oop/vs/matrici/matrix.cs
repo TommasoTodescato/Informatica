@@ -59,6 +59,16 @@ namespace matrici
             m = res;
         }
 
+        public void sum(matrix m2)
+        {
+            if (rows != m2.rows || cols != m2.cols) return;
+
+            for (int i = 0; i < rows; i++)
+                for (int j = 0; j < cols; j++)
+                    m[i, j] += m2.m[i, j];
+        }
+
+
         public void transpose()
         {
             int[,] tmp = new int[cols, rows];
@@ -71,5 +81,6 @@ namespace matrici
             cols = tr;
             m = tmp;
         }
+
     }
 }
