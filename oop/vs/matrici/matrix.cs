@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿
+using System.Runtime.ExceptionServices;
 
 namespace matrici
 {
@@ -7,11 +8,28 @@ namespace matrici
         private int rows, cols;
         private int[,] m;
 
-        public matrix(int rows, int cols)
+        public matrix(int rows, int cols, bool fill, int min, int max)
         {
             this.rows = rows;
             this.cols = cols;
             m = new int[rows, cols];
+            if (!fill) return;
+         
+            Random r = new Random();
+            for (int i = 0; i < rows; i++)
+                for (int j = 0; j < cols; j++)
+                    m[i, j] = r.Next(min, max);
+        }
+        
+        public void print()
+        {
+            for (int i = 0; i < rows; i++)
+            {
+                Console.Write("| ");
+                for (int j = 0; j < cols; j++)
+                    Console.Write(m[i, j] + " ");
+                Console.WriteLine("|");
+            }
         }
 
         public void scalar_product(int mul)
@@ -23,23 +41,22 @@ namespace matrici
 
         public void dot_product(matrix m2)
         {
-            if (rows != m2.rows || cols != m2.cols) return;
-
+            if (cols != m2.rows) return;
+            
+            int[,] res = new int[rows, m2.cols];
             for (int i = 0; i < rows; i++)
             {
-                for (int j = 0; j < cols; j++)
+                for (int j = 0; j < m2.cols; j++)
                 {
                     int sum = 0;
-                    for (int k = 0; k < m2.rows; k++)
-                    {
-                        sum += m[i, j] * m[k, j];
+                    for (int k = 0; k < cols; k++)
+                        sum += m[i, k] * m2.m[k, j];
 
-                    }
-
-                    m[i, j] = sum;
+                    res[i, j] = sum;
                 }
             }
-
+            cols = m2.cols;
+            m = res;
         }
 
         public void transpose()
