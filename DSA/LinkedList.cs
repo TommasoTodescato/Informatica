@@ -51,6 +51,16 @@
             head = tmp;
         }
 
+        public void print()
+        {
+            node<T>? tmp = head;
+            while (tmp is not null)
+            {
+                Console.WriteLine(tmp.data.ToString());
+                tmp = tmp.next;
+            }
+        }
+
         // removes first occurrency of data
         // returns true if removed, false if not found
         public bool remove(T data)
@@ -68,7 +78,7 @@
             {
                 if (EqualityComparer<T>.Default.Equals(tmp.data, data))
                 {
-                    tmp = null;
+                    prev.next = tmp.next;
                     return true;
                 }
 
