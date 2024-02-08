@@ -14,7 +14,7 @@
 
             m1.dot_product(m2);
             m1.print();
-
+            Console.WriteLine(m1.determinant());
         }
     }
 }

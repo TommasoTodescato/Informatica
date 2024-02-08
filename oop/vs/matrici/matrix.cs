@@ -1,5 +1,6 @@
 ﻿
 using System.Runtime.ExceptionServices;
+using System.Security.Cryptography;
 
 namespace matrici
 {
@@ -68,7 +69,6 @@ namespace matrici
                     m[i, j] += m2.m[i, j];
         }
 
-
         public void transpose()
         {
             int[,] tmp = new int[cols, rows];
@@ -80,6 +80,52 @@ namespace matrici
             rows = cols;
             cols = tr;
             m = tmp;
+        }
+
+        public void swap_row(int r1, int r2)
+        {
+            for (int i = 0; i < cols; i++)
+            {
+                int tmp = m[r2, i];
+                m[r2, i] = m[r1, i];
+                m[r1, i] = tmp;
+            }
+        }
+
+        public int determinant()
+        {
+            int min = int.MinValue;
+            if (rows != cols) return int.MinValue;
+
+            int det = 1;
+            for (int i = 0; i < rows; ++i)
+            {
+                int k = i;
+                for (int j = i + 1; j < rows; ++j)
+                    if (Math.Abs(m[j, i]) > Math.Abs(m[k,i]))
+                        k = j;
+
+                if (Math.Abs(m[k, i]) < min)
+                {
+                    det = 0;
+                    break;
+                }
+
+                swap_row(i, k);
+                
+                if (i != k)
+                    det = -det;
+
+                det *= m[i, i];
+                for (int j = i + 1; j < rows; ++j)
+                    m[i, j] /= m[i, i];
+                
+                for (int j = 0; j < rows; ++j)
+                    if (j != i && Math.Abs(m[j, i]) > min)
+                        for (int x = i + 1; x < rows; ++x)
+                            m[j, x] -= m[i, x] * m[j, i];
+            }
+            return det;
         }
 
     }
