@@ -32,8 +32,26 @@
             return head;
         }
 
+        public void pop_front()
+        {
+            head = head.next;
+        }
+
+        public void pop_back()
+        {
+            node<T> prev = head;
+            node<T> tmp = head;
+            while (tmp.next is not null)
+            {
+                tmp = tmp.next;
+                if (tmp.next is null)
+                    prev.next = null;
+                prev = tmp;
+            }
+        }
+
         // ritorna l'elemento all'indice index, null se index è troppo grande
-        public T get(int index)
+        public T? get(int index)
         {
             node<T> tmp = head;
             int i = 0;
@@ -44,7 +62,7 @@
                 i++;
                 tmp = tmp.next;
             }
-            return default(T);
+            return default;
         }
 
         public void push_back(T data)
