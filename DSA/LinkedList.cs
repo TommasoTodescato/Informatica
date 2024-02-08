@@ -32,6 +32,21 @@
             return head;
         }
 
+        // ritorna l'elemento all'indice index, null se index è troppo grande
+        public T get(int index)
+        {
+            node<T> tmp = head;
+            int i = 0;
+            while (tmp is not null)
+            {
+                if (i == index)
+                    return tmp.data;
+                i++;
+                tmp = tmp.next;
+            }
+            return default(T);
+        }
+
         public void push_back(T data)
         {
             node<T> tmp = new node<T>(data);
@@ -61,8 +76,8 @@
             }
         }
 
-        // removes first occurrency of data
-        // returns true if removed, false if not found
+        // rimuove la prima occorrenza di data
+        // ritorna true se è stata rimossa, false se non c'era
         public bool remove(T data)
         {
             if (head is null) return false;
