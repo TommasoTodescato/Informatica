@@ -52,5 +52,10 @@
             }
         }
 
+        public void add(int n)
+        {
+
+        }
+
     }
 }
