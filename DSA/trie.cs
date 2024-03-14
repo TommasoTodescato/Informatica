@@ -1,69 +1,60 @@
 ﻿namespace DSA
-{
-    public class Node
+{       
+    public class trie_node
     {
-        public Dictionary<char, Node> children = new Dictionary<char, Node>();
+        public Dictionary<char, trie_node> children = new Dictionary<char, trie_node>();
         public bool word;
     }
 
-    public class Trie
+    public class trie
     {
-        Node root;
+        trie_node root;
 
-        public void CreateRoot()
+        public void init()
         {
-            root = new Node();
+            root = new trie_node();
         }
 
-        public void Add(char[] chars)
+        public void add(char[] s)
         {
-            Node tempRoot = root;
-            int total = chars.Count() - 1;
-            for (int i = 0; i < chars.Count(); i++)
+            trie_node tmp = root;
+            for (int i = 0; i < s.Count(); i++)
             {
-                Node newTrie;
-                if (tempRoot.children.Keys.Contains(chars[i]))
-                    tempRoot = tempRoot.children[chars[i]];
+                if (tmp.children.Keys.Contains(s[i]))
+                    tmp = tmp.children[s[i]];
                 else
                 {
-                    newTrie = new Node();
+                    trie_node new_node = new trie_node();
+                    if ((s.Count()-1) == i) new_node.word = true;
 
-                    if (total == i)
-                        newTrie.word = true;
-
-                    tempRoot.children.Add(chars[i], newTrie);
-                    tempRoot = newTrie;
+                    tmp.children.Add(s[i], new_node);
+                    tmp = new_node;
                 }
             }
         }
 
-        public bool FindPrefix(char[] chars)
+        public bool find_prefix(char[] s)
         {
-            Node tempRoot = root;
-            for (int i = 0; i < chars.Count(); i++)
+            trie_node tmp = root;
+            for (int i = 0; i < s.Count(); i++)
             {
-                if (tempRoot.children.Keys.Contains(chars[i]))
-                    tempRoot = tempRoot.children[chars[i]];
+                if (tmp.children.Keys.Contains(s[i]))
+                    tmp = tmp.children[s[i]];
                 else
                     return false;
             }
             return true;
         }
 
-        public bool FindWord(char[] chars)
+        public bool find_word(char[] s)
         {
-            Node tempRoot = root;
-            int total = chars.Count() - 1;
-            for (int i = 0; i < chars.Count(); i++)
+            trie_node tmp = root;
+            for (int i = 0; i < s.Count(); i++)
             {
-                if (tempRoot.children.Keys.Contains(chars[i]))
+                if (tmp.children.Keys.Contains(s[i]))
                 {
-                    tempRoot = tempRoot.children[chars[i]];
-
-                    if (total == i)
-                    {
-                        if (tempRoot.word == true) return true;
-                    }
+                    tmp = tmp.children[s[i]];
+                    if ((s.Count() - 1) == i && tmp.word == true) return true;
                 }
                 else return false;
             }
@@ -71,22 +62,3 @@
         }
     }
 }
-
-/*
-Calling Code:
-    Tries t = new Tries();
-    t.CreateRoot();
-    t.Add("abc".ToCharArray());
-    t.Add("abgl".ToCharArray());
-    t.Add("cdf".ToCharArray());
-    t.Add("abcd".ToCharArray());
-    t.Add("lmn".ToCharArray());
-
-    bool findPrefix1 = t.FindPrefix("ab".ToCharArray());
-    bool findPrefix2 = t.FindPrefix("lo".ToCharArray());
-
-    bool findWord1 = t.FindWord("lmn".ToCharArray());
-    bool findWord2 = t.FindWord("ab".ToCharArray());
-    bool findWord3 = t.FindWord("cdf".ToCharArray());
-    bool findWord4 = t.FindWord("ghi".ToCharArray());
-*/

@@ -19,6 +19,14 @@
             list.print();
 
 
+            Console.WriteLine("----------------");
+
+            trie t = new trie();
+            t.init();
+
+
+            Console.WriteLine("----------------");
+
         }
     }
 }
