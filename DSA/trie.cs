@@ -10,7 +10,7 @@
     {
         trie_node root;
 
-        public void init()
+        public trie()
         {
             root = new trie_node();
         }
