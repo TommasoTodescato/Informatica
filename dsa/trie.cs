@@ -5,7 +5,6 @@
         public Dictionary<char, trie_node> children = new Dictionary<char, trie_node>();
         public bool word;
     }
-
     public class trie
     {
         trie_node root;

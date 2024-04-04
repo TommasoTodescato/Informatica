@@ -51,11 +51,5 @@
                     q.Enqueue(2 * (n + 1));
             }
         }
-
-        public void add(int n)
-        {
-
-        }
-
     }
 }
