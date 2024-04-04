@@ -1,8 +1,7 @@
 ﻿namespace DSA
 {
-    internal class parolando
+    internal class shangai
     {
-
 
     }
 }
