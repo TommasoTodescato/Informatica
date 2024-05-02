@@ -1,18 +1,34 @@
-﻿namespace DSA
+﻿using ds;
+
+namespace DSA
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            var t = new trie();
-            t.add("ciao");
-            t.add("ciarlatano");
+            var g = new graph(9);
 
-            Console.WriteLine(t.find_word("ciao"));
-            Console.WriteLine(t.find_word("ciaociao"));
+            g.addEdge(0, 1);
+            g.addEdge(0, 2);
+            g.addEdge(0, 3);
+            g.addEdge(1, 4);
+            g.addEdge(1, 5);
+            g.addEdge(5, 6);
+            g.addEdge(4, 7);
+            g.addEdge(4, 8);
 
-            Console.WriteLine(t.find_prefix("ci"));
-            Console.WriteLine(t.find_prefix("asd"));
+            var am = g.trova_amici(1);
+
+            foreach(List<int> l in am)
+            {
+                foreach(int i in l)
+                {
+                    Console.Write(i);
+                    Console.Write(" ");
+                }
+                Console.WriteLine();
+            }
+
         }
     }
 }

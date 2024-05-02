@@ -5,49 +5,40 @@
         int N;
         List<List<int>> adj;
         bool[] visited;
-        graph(int n)
+        public graph(int n)
         {
             N = n;
-            adj = new List<List<int>>();
+            adj = new List<List<int>>(N);
+            for (int i = 0; i < N; i++)
+            {
+                adj.Add(new List<int>());
+            }
         }
 
-        void addEdge(int v, int w)
+        public void addEdge(int v, int w)
         {
             adj[v].Add(w);
             adj[w].Add(v);
         }
 
-        int[] BFS(int start)
+        public List<List<int>> trova_amici(int start)
         {
-            bool[] visited = new bool[N];
-            int[] distance = new int[N];
-            Queue<int> q = new Queue<int>();
-            visited[start] = true;
-            distance[start] = 0;
-            q.Enqueue(start);
-            while (q.Count != 0)
+            List<List<int>> amici = new List<List<int>>(N);
+            for (int i = 0; i < N; i++)
             {
-                int s = q.Dequeue();
+                amici.Add(new List<int>());
+            }
 
-                foreach (int v in adj[s])
+            foreach (int v in adj[start])
+            {
+                foreach(int w in adj[v])
                 {
-                    if (visited[v]) continue;
-
-                    Console.WriteLine(v);
-
-                    visited[v] = true;
-                    distance[v] = distance[s] + 1;
-                    q.Enqueue(v);
+                    if (w == start) continue;
+                    amici[v].Add(w);
                 }
             }
 
-            return distance;
+            return amici;
         }
-        void DFS(int start)
-        {
-            
-        }
-
-
     };
 }
