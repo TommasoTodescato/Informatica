@@ -4,7 +4,7 @@
     {
         int N;
         List<List<int>> adj;
-
+        bool[] visited;
         graph(int n)
         {
             N = n;
@@ -42,6 +42,10 @@
             }
 
             return distance;
+        }
+        void DFS(int start)
+        {
+            
         }
 
 
