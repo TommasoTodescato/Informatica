@@ -1,0 +1,24 @@
+SCHEMA RELAZIONALE:
+
+--------------------------------------
+MUSEI (NomeM, Città)
+	PK(NomeM)
+
+ARTISTI (NomeA, Nazionalità)
+	PK(NomeA)
+
+OPERE (Codice, Titolo, NomeM*, NomeA*)
+	PK(Codice)
+	FK(NomeM) -> MUSEI(NomeM)
+	FK(NomeA) -> ARTISTI(NomeA)
+
+PERSONAGGI (Personaggio, Codice*)
+	PK(Personaggio)
+	FK(Codice) -> OPERE(Codice)
+--------------------------------------
+
+4- Le città in cui son conservate opere di Caravaggio
+
+SELECT M.Città
+FROM OPERE O INNER JOIN MUSEI M ON (M.NomeM = O.NomeM)
+WHERE O.NomeA = "Caravaggio";

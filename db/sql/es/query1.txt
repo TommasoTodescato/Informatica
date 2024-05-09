@@ -1,0 +1,25 @@
+SCHEMA RELAZIONALE:
+
+--------------------------------------
+MUSEI (NomeM, Città)
+	PK(NomeM)
+
+ARTISTI (NomeA, Nazionalità)
+	PK(NomeA)
+
+OPERE (Codice, Titolo, NomeM*, NomeA*)
+	PK(Codice)
+	FK(NomeM) -> MUSEI(NomeM)
+	FK(NomeA) -> ARTISTI(NomeA)
+
+PERSONAGGI (Personaggio, Codice*)
+	PK(Personaggio)
+	FK(Codice) -> OPERE(Codice)
+--------------------------------------
+
+
+1- Il codice ed il titolo delle opere di Tiziano conservate alla “National Gallery"
+
+SELECT Codice, Titolo
+FROM OPERE
+WHERE NomeA = "Tiziano" AND NomeM = "National Gallery";

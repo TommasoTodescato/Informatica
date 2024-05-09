@@ -1,0 +1,25 @@
+SCHEMA RELAZIONALE:
+
+--------------------------------------
+MUSEI (NomeM, Città)
+	PK(NomeM)
+
+ARTISTI (NomeA, Nazionalità)
+	PK(NomeA)
+
+OPERE (Codice, Titolo, NomeM*, NomeA*)
+	PK(Codice)
+	FK(NomeM) -> MUSEI(NomeM)
+	FK(NomeA) -> ARTISTI(NomeA)
+
+PERSONAGGI (Personaggio, Codice*)
+	PK(Personaggio)
+	FK(Codice) -> OPERE(Codice)
+--------------------------------------
+
+2- Il nome dell’artista ed il titolo delle opere conservate alla “Galleria degli Uffizi” o alla
+“National Gallery”.
+
+SELECT NomeA, Titolo
+FROM OPERE
+WHERE NomeM = "Galleria degli Uffizi" OR NomeM = "National Gallery";

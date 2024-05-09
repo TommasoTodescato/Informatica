@@ -1,0 +1,27 @@
+SCHEMA RELAZIONALE:
+
+MUSEI (NomeM, Città)
+ARTISTI (NomeA, Nazionalità)
+OPERE (Codice, Titolo, NomeM*, NomeA*)
+PERSONAGGI (Personaggio, Codice*)
+
+Scrivere le interrogazioni SQL che restituiscono le seguenti informazioni:
+1- Il codice ed il titolo delle opere di Tiziano conservate alla “National Gallery”.
+2- Il nome dell’artista ed il titolo delle opere conservate alla “Galleria degli Uffizi” o alla
+“National Gallery”.
+3- Il nome dell’artista ed il titolo delle opere conservate nei musei di Firenze
+4- Le città in cui son conservate opere di Caravaggio
+5- Il codice ed il titolo delle opere di Tiziano conservate nei musei di Londra
+6- Il nome dell’artista ed il titolo delle opere di artisti spagnoli conservate nei musei di Firenze
+7- Il codice ed il titolo delle opere di artisti italiani conservate nei musei di Londra, in cui è
+rappresentata la Madonna
+8- Per ciascun museo di Londra, il numero di opere di artisti italiani ivi conservate
+9- Il nome dei musei di Londra che non conservano opere di Tiziano
+10- Il nome dei musei di Londra che conservano solo opere di Tiziano
+11- Per ciascun artista, il nome dell’artista ed il numero di sue opere conservate alla “Galleria
+degli Uffizi”
+12- I musei che conservano almeno 20 opere di artisti italiani
+13- Per le opere di artisti italiani che non hanno personaggi, il titolo dell’opera ed il nome
+dell’artista
+14- Il nome dei musei di Londra che non conservano opere di artisti italiani, eccettuato Tiziano
+15- Per ogni museo, il numero di opere divise per la nazionalità dell’artista
