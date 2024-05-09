@@ -37,7 +37,6 @@
                     amici[v].Add(w);
                 }
             }
-
             return amici;
         }
     };
