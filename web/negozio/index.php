@@ -52,21 +52,19 @@
         </thead>
         <tbody>
           <?php
-            $canzoni = array(
-              "prova" => "ok",
-              "asdasd" => "a"
-            );
-            foreach ($arr as &$value) {
-                $value = $value * 2;
-            }
-            unset($value);
+          $canzoni = array(
+            "prova" => "ok",
+            "asdasd" => "a"
+          );
+
+          foreach ($canzoni as $key => $value) {
+            echo "<tr>
+            <td>{$key}</td>
+            <td>{$value}</td>
+            </tr>
+            ";
+          }
           ?>
-
-          <tr>
-            <td>canzone1</td>
-            <td>link1</td>
-          </tr>
-
         </tbody>
       </table>
     </div>
